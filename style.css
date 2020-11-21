@@ -1,0 +1,104 @@
+*
+{
+	overflow-x: hidden;
+}
+body
+{
+	background: black;
+}
+#video
+{
+	height:500px;
+	width: 600px;
+	background: black;
+	
+}
+ul li button
+{
+	border-radius: 50%;
+	padding: 10px 10px 10px 10px;
+}
+#video ul
+{
+	list-style: none;
+}
+#video ul li
+{
+	display: inline-block;
+}
+#videoElement
+{
+	width:100%;
+}
+img
+{
+	width: 100%;
+}
+
+#student-video
+{
+	
+	height:500px;
+	width: 600px;
+	background: black;
+}
+input
+{
+	border: none;
+}
+input:focus
+{
+	 outline: none;
+}
+.msg
+{
+	position: absolute;
+	bottom: 0;
+
+}
+#chatbox
+{
+	background: white;
+	position: relative;
+	padding:20px 40px 200px 20px;
+	border-left:1px solid black;
+	height:630px;
+	box-shadow: -1px 1px 20px 1px;
+}
+
+#msgbody
+{
+	background: white;
+	height:400px;
+}
+.fa-phone
+{
+	color: red;
+}
+
+@media only screen and (max-width: 600px) {
+ #video
+ {
+ 	height:350px;
+ }
+ #student-video
+ {
+ 	height:150px;
+ }
+ #chatbox
+ {
+ 	height:300px;
+ }
+}
+
+
+
+
+
+
+
+
+
+
+
+

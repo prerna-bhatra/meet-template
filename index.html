@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Google Meet</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+		<div>
+			<div class="row" id="videmain">
+				<div class="col-md-9">
+						<div class="row" id="live">
+							<div  class="col-md-6" id="video">
+								<video autoplay="true" id="videoElement"></video>
+								<dir class="MeetingIcons">
+									<ul>
+										<li>
+											<button title="Mute Camera"><i class="fa fa-microphone"></i></button>
+										</li>
+										<li>
+											<button title="Leave Meeting" onclick="window.close()"><i class="fa fa-phone"></i></button>
+										</li>
+										<li>
+											<button title="Close Camera" onclick="stop()"><i class="fa fa-video-camera"></i></button>
+										</li>
+									</ul>
+								</dir>
+							</div>
+							<div class="col-md-6" id="student-video">
+								<img src="images/student.gif">
+							</div>
+						</div>
+			</div>
+				<div class="col-md-3" id="chatbox">
+					Meeting Details
+					<div id="msgbody">
+						
+					</div>
+					<div class="msg">
+						<input type="text" placeholder="Send Message" name="" id="message">
+						<button class="btn btn-primary" style="float: right;" onclick="showmsg()">Send</button>
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+	<script type="text/javascript">
+	var video = document.querySelector("#videoElement");
+
+if (navigator.mediaDevices.getUserMedia) {
+  navigator.mediaDevices.getUserMedia({ video: true })
+    .then(function (stream) {
+      video.srcObject = stream;
+    })
+    .catch(function (err0r) {
+      console.log("Something went wrong!");
+    });
+}
+function stop(e) {
+  var stream = video.srcObject;
+  var tracks = stream.getTracks();
+
+  for (var i = 0; i < tracks.length; i++) {
+    var track = tracks[i];
+    track.stop();
+  }
+ video.srcObject = false;
+}
+
+function show()
+{
+	var name = document.getElementById('message').value;
+     document.getElementById('msgbody').innerHTML = name;
+}
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
